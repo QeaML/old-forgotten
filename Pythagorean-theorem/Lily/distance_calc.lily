@@ -1,0 +1,23 @@
+import math
+
+define distance2d(from: List[Integer], to: List[Integer]): Double
+{
+	var diff_x = math.abs(from[0] - to[0]).to_d()
+    var diff_y = math.abs(from[1] - to[1]).to_d()
+    var delta = math.sqrt(math.pow(diff_x, 2.0) + math.pow(diff_y, 2.0))
+    return(delta)
+}
+
+define distance3d(from: List[Integer], to: List[Integer]): Double
+{
+	var from2d = [from[0], from[2]]
+    var to2d = [to[0], to[2]]
+    var diff_x = distance2d(from2d, to2d)
+	var diff_y = math.abs(from[1] - to[1]).to_d()
+    var delta = math.sqrt(math.pow(diff_x, 2.0) + math.pow(diff_y, 2.0))
+    return(delta)
+}
+
+var a = [1, 2, 3]
+var b = [4, 5, 6]
+print(distance3d(a, b))

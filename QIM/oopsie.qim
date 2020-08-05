@@ -1,0 +1,4 @@
+# this script loads the preset image, scales it to 25% and back, then saves it as "oopsie.png"
+load image preset;
+scale image 25%;scale image 400%;
+save image "oopsie.png";

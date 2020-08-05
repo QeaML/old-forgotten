@@ -1,0 +1,15 @@
+# this is an example on how macros work
+macro "downscale" begin;
+scale image 10%;
+macro "downscale" end;
+
+macro "upscale" begin;
+scale image 1000%;
+macro "upscale" end;
+
+# we load the preset image here and do the macros to it
+load image preset;			# we need a preset to load tho
+macro "downscale" run;macro "upscale" run;
+
+# save the image as "macroopsie.jpg"
+save image "macroopsie.jpg";

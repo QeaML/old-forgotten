@@ -1,0 +1,4 @@
+*.class
+*.jar
+*.*_
+src/qeaml/jqutilstest/*.*

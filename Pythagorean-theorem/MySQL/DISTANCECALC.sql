@@ -1,0 +1,25 @@
+-- The SQUARE_ABS() function does both the POW() and the ABS()
+-- This is useful for minimalization.
+CREATE FUNCTION SQR_ABS (i DOUBLE) 
+RETURNS DOUBLE
+	RETURN POW(ABS(i), 2.0);
+
+-- While arrays do technically exist in MySQL, we're not going to use them
+-- It's just easier to do this way
+CREATE FUNCTION DISTANCE2D 
+	(FROMX DOUBLE, FROMY DOUBLE, TOX DOUBLE, TOY DOUBLE) 
+RETURNS DOUBLE
+    RETURN SQRT(
+		SQR_ABS(FROMX-TOX)+SQR_ABS(FROMY-TOY)
+	);
+
+CREATE FUNCTION DISTANCE3D 
+	(FROMX DOUBLE, FROMY DOUBLE, FROMZ DOUBLE,
+    TOX DOUBLE, TOY DOUBLE, TOZ DOUBLE) -- Tried to keep it under 80 chars
+RETURNS DOUBLE
+	-- SQUISH
+	RETURN SQRT(
+		SQR_ABS(DISTANCE2D(FROMX,FROMZ,TOX,TOZ))+SQR_ABS(FROMY-TOY)
+	);
+    
+SELECT DISTANCE3D(1.0, 2.0, 3.0, 4.0, 5.0, 6.0);

@@ -1,0 +1,21 @@
+func distance2d(from, to){
+	var diffX = Math.abs(from[0] - to[0]);
+	var diffY = Math.abs(from[1] - to[1]);
+	var delta = Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
+	return delta;
+}
+
+func distance3d(from, to){
+	var from2d = [from[0], from[2]];
+	var to2d = [to[0], to[2]];
+	var diffX = distance2d(from2d, to2d);
+	var diffY = Math.abs(from[1] - to[1]);
+	var delta = Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
+	return delta;
+}
+
+func main(){
+	var a = [1.0, 2.0, 3.0];
+	var b = [4.0, 5.0, 6.0];
+	System.print(distance3d(a, b));
+}

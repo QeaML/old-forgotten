@@ -1,0 +1,46 @@
+<head>
+    <title>Output</title>
+    <style>
+        body {
+            color: #00ff00;
+            background-color: #000000;
+            font-family: monospace;
+        }
+        textarea {
+            color: #ffffff;
+            background-color: #444444;
+        }
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 36;
+        }
+    </style>
+</head>
+<body>
+    <table width="100%">
+        <tr>
+            <td width="50%" style="vertical-align: top;">
+                <h1>Input:</h1>
+                <hr />
+                <textarea rows="30" cols="88" disabled>
+{{ input }}
+                </textarea>
+            </td>
+            <td width="50%" style="vertical-align: top;">
+                <h1>Output:</h1>
+                <hr />
+                <textarea rows="30" cols="88" disabled>
+{{ output }}
+                </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td width="100%">
+                <center>
+                    <a href="/input?lang={{ lang }}"><< Go back</a>
+            </td>
+        <tr>
+    </table>
+</body>

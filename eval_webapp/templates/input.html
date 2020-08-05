@@ -1,0 +1,40 @@
+<head>
+    <title>Input</title>
+    <style>
+        body {
+            color: #00ff00;
+            background-color: #000000;
+            font-family: monospace;
+        }
+        textarea {
+            background-color: #444444;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <table width="100%">
+        <tr>
+            <td width="100%" style="vertical-align: top;">
+                <center>
+                <h1>Input:</h1>
+                <hr />
+                <form action="/output" method="post">
+                    {{ form.hidden_tag() }}
+                    <p>
+                        {{ form.lang.label }}<br>
+                        {{ form.lang() }}
+                    </p>
+                    <p>
+                        {{ form.src.label }}<br>
+                        {{ form.src() }}
+                    </p>
+                    <p>
+                        {{ form.submit() }}
+                    </p>
+                </form>
+                </center>
+            </td>
+        </tr>
+    </table>
+</body>
